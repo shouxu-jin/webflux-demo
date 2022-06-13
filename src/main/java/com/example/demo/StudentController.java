@@ -16,8 +16,9 @@ public class StudentController {
     public Flux<Student> list() {
         return studentRepository.findAll();
     }
+
     @RequestMapping("/api/students/{id}")
-    public Mono<Student> list(@PathVariable Long id) {
+    public Mono<Student> get(@PathVariable Long id) {
         return studentRepository.findById(id);
     }
 }
